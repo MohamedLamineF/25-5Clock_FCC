@@ -4,13 +4,13 @@ import { ThemeToggle } from "../UI/ThemeToggle";
 export function Header({ isDark, onToggleTheme }: HeaderProps) {
   return (
     <>
-      <header className="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-lg text-gray-900 dark:text-white p-2 transition-colors duration-200">
+      <header className="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-lg p-2 transition-colors duration-200">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div></div>
 
             <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl font-bold tracking-tight text-slate-200">
+              <span className="text-2xl font-bold tracking-tight text-slate-200 text-black dark:text-white">
                 25 + 5 <span className="text-sky-400"> clock</span>
               </span>
             </div>

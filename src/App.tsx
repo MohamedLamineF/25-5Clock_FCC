@@ -2,6 +2,7 @@ import "./App.css";
 import { Footer } from "./components/Layout/footer";
 import { Header } from "./components/Layout/header";
 import { TimeControl } from "./components/Timer/TimeControl";
+import { TimerDisplay } from "./components/Timer/TimerDisplay";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { useTimer } from "./hooks/useTimer";
 
@@ -10,7 +11,7 @@ function App() {
   const {
     breakLength,
     sessionLength,
-    timeLeft,
+    timer,
     isRunning,
     isSession,
     audioRef,
@@ -32,33 +33,45 @@ function App() {
               : "[background:radial-gradient(125%_125%_at_50%_10%,#f5f5f5_40%,#63e_100%)]"
           }`}
         ></div>
-        <main className="container mx-auto px-4 py-8 flex items-center justify-center">
-          <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-            <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
-              <div className="flex justify-around mb-8">
-                <TimeControl
-                  label="Break Length"
-                  value={breakLength}
-                  onIncrement={incrementBreak}
-                  onDecrement={decrementBreak}
-                  labelId="break-label"
-                  lengthId="break-length"
-                  incrementId="break-increment"
-                  decrementId="break-decrement"
-                />
+        <main className="container flex items-center justify-center">
+          <div className="bg-white p-8 rounded-lg shadow-xl max-w-md ">
+            <div className="flex justify-around mb-8">
+              <TimeControl
+                label="Break Length"
+                value={breakLength}
+                onIncrement={incrementBreak}
+                onDecrement={decrementBreak}
+                labelId="break-label"
+                lengthId="break-length"
+                incrementId="break-increment"
+                decrementId="break-decrement"
+              />
 
-                <TimeControl
-                  label="session Length"
-                  value={sessionLength}
-                  onIncrement={incrementSession}
-                  onDecrement={decrementSession}
-                  labelId="session-label"
-                  lengthId="session-length"
-                  incrementId="session-increment"
-                  decrementId="session-decrement"
-                />
-              </div>
+              <TimeControl
+                label="session Length"
+                value={sessionLength}
+                onIncrement={incrementSession}
+                onDecrement={decrementSession}
+                labelId="session-label"
+                lengthId="session-length"
+                incrementId="session-increment"
+                decrementId="session-decrement"
+              />
             </div>
+
+            <TimerDisplay
+              timeLeft={timer}
+              timerLabel={isSession ? "Session" : "Break"}
+              isRunning={isRunning}
+              onStartStop={toggleTimer}
+              onReset={reset}
+            />
+
+            <audio
+              id="beep"
+              ref={audioRef}
+              src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+            />
           </div>
         </main>
       </div>

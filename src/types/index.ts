@@ -7,3 +7,13 @@ export interface ThemeToggleProps {
   isDark: boolean;
   onToggle: () => void;
 }
+export interface TimeControlProps {
+  label: string;
+  value: number;
+  onIncrement: () => void;
+  onDecrement: () => void;
+  labelId: string;
+  lengthId: string;
+  incrementId: string;
+  decrementId: string;
+}

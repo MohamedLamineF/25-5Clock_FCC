@@ -10,7 +10,7 @@ export function Footer() {
 
           <div className="flex items-center justify-center gap-3">
             <a
-              href="https://github.com/MohamedLamineF/JavaScriptCalculatorFCC"
+              href="https://github.com/MohamedLamineF/25-5Clock_FCC"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 dark:text-white hover:text-purple-500 transition-colors"

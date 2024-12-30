@@ -17,3 +17,11 @@ export interface TimeControlProps {
   incrementId: string;
   decrementId: string;
 }
+
+export interface TimerDisplayProps {
+  timeLeft: string;
+  timerLabel: string;
+  isRunning: boolean;
+  onStartStop: () => void;
+  onReset: () => void;
+}

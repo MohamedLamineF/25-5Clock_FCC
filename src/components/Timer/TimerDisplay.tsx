@@ -10,11 +10,17 @@ export function TimerDisplay({
 }: TimerDisplayProps) {
   return (
     <div className="flex flex-col items-center space-y-2">
-      <h2 id="timer-label" className="text-lg font-medium text-gray-700">
+      <h2
+        id="timer-label"
+        className={`text-lg font-medium dark:text-gray-200 text-gray-700`}
+      >
         {timerLabel}
       </h2>
 
-      <div id="time-left" className="text-4xl font-semibold text-gray-800">
+      <div
+        id="time-left"
+        className={`text-4xl font-semibold dark:text-gray-100 text-gray-800`}
+      >
         {timeLeft}
       </div>
 

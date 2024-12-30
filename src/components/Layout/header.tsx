@@ -11,7 +11,7 @@ export function Header({ isDark, onToggleTheme }: HeaderProps) {
 
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl font-bold tracking-tight text-black dark:text-white">
-                25 + 5 <span className="text-sky-400"> clock</span>
+                25 + 5 <span className="text-sky-400"> clock </span>
               </span>
             </div>
 

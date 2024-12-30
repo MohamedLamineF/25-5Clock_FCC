@@ -27,14 +27,10 @@ function App() {
       <Header isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} />
       <div className="flex-1 relative">
         <div
-          className={`absolute inset-0 -z-10 h-full w-full items-center ${
-            isDark
-              ? "[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
-              : "[background:radial-gradient(125%_125%_at_50%_10%,#f5f5f5_40%,#63e_100%)]"
-          }`}
+          className={`absolute inset-0 -z-10 h-full w-full items-center dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] [background:radial-gradient(125%_125%_at_50%_10%,#f5f5f5_40%,#63e_100%)]`}
         ></div>
         <main className="container flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg shadow-xl max-w-md ">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl max-w-md">
             <div className="flex justify-around mb-8">
               <TimeControl
                 label="Break Length"
